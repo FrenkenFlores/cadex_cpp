@@ -20,7 +20,7 @@ set(
     ${SOURCES_DIR}/Point.h
     ${SOURCES_DIR}/Curve.h
     ${SOURCES_DIR}/Circle.h
-
+    ${SOURCES_DIR}/Ellipse.h
 )
 
 

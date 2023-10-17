@@ -4,6 +4,7 @@
 #include "Point.h"
 #include "Circle.h"
 #include "Curve.h"
+#include "Ellipse.h"
 
 
 enum available_curves {
@@ -14,23 +15,27 @@ enum available_curves {
 
 
 int main() {
+    Ellipse e(1.0, 1.0);
     std::vector<Curve *> container;
     
     srand(42);
     for (int i = 0; i < 10; i++) {
-        const int t = rand() % 100;
+        // Initialize random curves with random radiuses.
+        const int radius = rand() % 100;
+        const int fixedPointA = radius + 10;
+        const int fixedPointB = radius - 20;
+        const int step = rand() % 10;
         switch (rand() % 3) {
-            case CIRCLE:
-                container.push_back(new Circle(t));
-                std::cout << "Circle with parameter " << t << "." << std::endl;
+            case available_curves::CIRCLE:
+                container.push_back(new Circle(radius));
+                std::cout << "Circle with radius " << radius << "." << std::endl;
                 break;
-            case ELLIPSE:
-                container.push_back(new Circle(t));
-                std::cout << "Ecllipse with parameter " << t << "." << std::endl;
+            case available_curves::ELLIPSE:
+                container.push_back(new Ellipse(fixedPointA, fixedPointB));
+                std::cout << "Ecllipse with fixed points " << fixedPointA << ", " << fixedPointB << "." << std::endl;
                 break;
-            case HELIX:
-                container.push_back(new Circle(t));
-                std::cout << "3D helix with parameter " << t << "." << std::endl;
+            case available_curves::HELIX:
+                std::cout << "3D helix with radius " << radius << ", and step " << step << "." << std::endl;
                 break;
         }
     }

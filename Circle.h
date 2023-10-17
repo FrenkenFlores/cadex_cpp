@@ -23,7 +23,7 @@ public:
     // Add the constructor that will initialize the radius value.
     Circle(double r) : radius(r) {}
     // implement the getPoint method. t takes value in [0, 2 * pi]
-    Point getPoint(const double t) const {
+    Point getPoint(const double t) const override{
         return {
             this->radius * cos(t), // The x coordinate value.
             this->radius * sin(t), // The y coordinate value.
@@ -31,7 +31,7 @@ public:
         };
     }
     // Implement the getDerivative method.
-    Point getDerivative(const double t) const {
+    Point getDerivative(const double t) const override{
         return {
             this->radius * -sin(t), // The x coordinate value.
             this->radius * cos(t), // The y coordinate value.
