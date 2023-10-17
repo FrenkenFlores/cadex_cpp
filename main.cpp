@@ -5,7 +5,7 @@
 #include "Circle.h"
 #include "Curve.h"
 #include "Ellipse.h"
-
+#include "Helix.h"
 
 enum available_curves {
     CIRCLE,
@@ -35,6 +35,7 @@ int main() {
                 std::cout << "Ecllipse with fixed points " << fixedPointA << ", " << fixedPointB << "." << std::endl;
                 break;
             case available_curves::HELIX:
+                container.push_back(new Helix(fixedPointA, fixedPointB));
                 std::cout << "3D helix with radius " << radius << ", and step " << step << "." << std::endl;
                 break;
         }

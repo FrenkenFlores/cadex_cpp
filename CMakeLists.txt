@@ -21,6 +21,7 @@ set(
     ${SOURCES_DIR}/Curve.h
     ${SOURCES_DIR}/Circle.h
     ${SOURCES_DIR}/Ellipse.h
+    ${SOURCES_DIR}/Helix.h
 )
 
 

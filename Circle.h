@@ -21,7 +21,7 @@ private:
     Circle &operator=(const Circle &c);
 public:
     // Add the constructor that will initialize the radius value.
-    Circle(double r) : radius(r) {}
+    Circle(const double r) : radius(r) {}
     // implement the getPoint method. t takes value in [0, 2 * pi]
     Point getPoint(const double t) const override{
         return {

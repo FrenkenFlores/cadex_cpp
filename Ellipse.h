@@ -21,7 +21,7 @@ private:
     Ellipse& operator=(const Ellipse& e);
 public:
     // Add the constructor that initialize the ellipse fixed points.
-    Ellipse(double a, double b): a(a), b(b) {}
+    Ellipse(const double a, const double b): a(a), b(b) {}
     // Implmenet the getPoint method.
     Point getPoint(const double t) const override {
         return {

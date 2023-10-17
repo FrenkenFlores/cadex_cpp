@@ -67,6 +67,7 @@
 		13965D942ADE6980004C92E7 /* Circle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
 		13965D952ADE6B9A004C92E7 /* Curve.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Curve.h; sourceTree = "<group>"; };
 		13965D992ADE7DF1004C92E7 /* Ellipse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ellipse.h; sourceTree = "<group>"; };
+		13965D9E2ADE8495004C92E7 /* Helix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helix.h; sourceTree = "<group>"; };
 		9CF06A659F524CEBBEF769A7 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = main.cpp; sourceTree = SOURCE_ROOT; };
 		A1E7935C33A4443D820C18D6 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 		FF36728CC32B49B58E89DE8C /* app */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +116,7 @@
 				9CF06A659F524CEBBEF769A7 /* main.cpp */,
 				13965D942ADE6980004C92E7 /* Circle.h */,
 				13965D992ADE7DF1004C92E7 /* Ellipse.h */,
+				13965D9E2ADE8495004C92E7 /* Helix.h */,
 				13965D952ADE6B9A004C92E7 /* Curve.h */,
 				13965D8D2ADE6154004C92E7 /* Point.h */,
 			);
