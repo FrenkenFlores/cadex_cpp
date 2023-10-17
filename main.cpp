@@ -48,6 +48,19 @@ int main() {
         std::cout << c->getPoint(t) << std::endl;
     }
     
+    
+    // Create a container that contains only circle curves from the general container.
+    std::vector<Circle *> circlesContainer;
+    for (Curve *c: container) {
+        // Try to downcast the curve to the Circle class.
+        Circle *circle = dynamic_cast<Circle *>(c);
+        // If the curve is an object of Circle class, than append it to the container.
+        if (circle)
+            circlesContainer.push_back(circle);
+    }
+    
+    // Check the size of the containers.
+    std::cout << "Size: " << circlesContainer.size() << ", " << container.size() << std::endl;
     // Clean memory.
     for (Curve *c: container) {
         delete c;
