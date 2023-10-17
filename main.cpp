@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-//#include "./Header Files/Point.h"
+#include <cmath>
 #include "Point.h"
 #include "Circle.h"
 #include "Curve.h"
@@ -39,8 +39,16 @@ int main() {
                 std::cout << "3D helix with radius " << radius << ", and step " << step << "." << std::endl;
                 break;
         }
+
+    }
+    // Print coordinates of points and derivatives of all curves at t=PI/4.
+    const double t = M_PI_4;
+    std::cout << "Print coordinates of points and derivatives of all curves at t=" << t << std::endl;
+    for (Curve *c: container) {
+        std::cout << c->getPoint(t) << std::endl;
     }
     
+    // Clean memory.
     for (Curve *c: container) {
         delete c;
     }
