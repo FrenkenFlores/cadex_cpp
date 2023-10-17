@@ -7,11 +7,17 @@
 #include "Ellipse.h"
 #include "Helix.h"
 
+
 enum available_curves {
     CIRCLE,
     ELLIPSE,
     HELIX
 };
+
+
+bool CompareCirclesByRadius(const Circle* a, const Circle* b) {
+    return a->getRadius() < b->getRadius();
+}
 
 
 int main() {
@@ -48,19 +54,32 @@ int main() {
         std::cout << c->getPoint(t) << std::endl;
     }
     
+
+    
     
     // Create a container that contains only circle curves from the general container.
     std::vector<Circle *> circlesContainer;
     for (Curve *c: container) {
         // Try to downcast the curve to the Circle class.
         Circle *circle = dynamic_cast<Circle *>(c);
-        // If the curve is an object of Circle class, than append it to the container.
+        // If the curve is an object of Circle class, than append the pointer to the container.
         if (circle)
             circlesContainer.push_back(circle);
     }
     
     // Check the size of the containers.
     std::cout << "Size: " << circlesContainer.size() << ", " << container.size() << std::endl;
+    // Sort the circles container.
+    std::cout << "Sorted circles container by radius:" << std::endl;
+    std::sort(circlesContainer.begin(), circlesContainer.end(), CompareCirclesByRadius);
+    for (Circle *c: circlesContainer) {
+        std::cout << c->getRadius() << std::endl;
+    }
+    double sum = 0;
+    for (Circle *c: circlesContainer) {
+        sum += c->getRadius();
+    }
+    std::cout << "Total sum of container circles radius: " << sum << std::endl;
     // Clean memory.
     for (Curve *c: container) {
         delete c;

@@ -9,7 +9,7 @@
 #define Circle_h
 #include "Curve.h"
 #include "Point.h"
-
+#include <iostream>
 
 // Inherit the Curve interface that define the methods for the curves.
 class Circle : public Curve {
@@ -38,7 +38,22 @@ public:
             0 // The z coordinate value.
         };
     }
+    const double getRadius() const{
+        return this->radius;
+    }
+    
+    double getRadius() {
+        return this->radius;
+    }
 };
 
+
+bool operator<=(const Circle &c1, const Circle &c2) {
+    return c1.getRadius() < c2.getRadius();
+}
+
+bool operator<=(Circle &c1, Circle &c2) {
+    return c1.getRadius() < c2.getRadius();
+}
 
 #endif /* Circle_h */
